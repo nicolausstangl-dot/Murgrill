@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MURGRILL — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ── Core ─────────────────────────────────── */
+    --ink:        #0F0F0F;   /* Tiefschwarz — Haupt-BG / Text auf hell */
+    --paper:      #FAFAF7;   /* Papierweiß — heller BG / Text auf dunkel */
+    --charcoal:   #1A1A1A;   /* Karten/Sektionen auf dunkel */
+    --grey:       #8A8A85;   /* Sekundärtext */
+    /* ── Akzente ─────────────────────────────── */
+    --red:        #FF3B1D;   /* Glut-Rot — Primärakzent, CTAs */
+    --yellow:     #FFC400;   /* Senf-Gelb — Sekundärakzent, Highlights */
+    --green:      #0E7C4A;   /* Steirisch-Grün — regionaler Akzent (Panther) */
+
+    --font:  'Inter', system-ui, sans-serif;
+    --mono:  'Space Mono', ui-monospace, monospace;
+    --maxw: 1100px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--ink); color:var(--paper);
+    font-family:var(--font); -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+  section{ padding:80px 0; border-top:1px solid #ffffff14; }
+  section:first-of-type{ border-top:0; }
+
+  .eyebrow{
+    font-size:.72rem; font-weight:700; letter-spacing:.34em; text-transform:uppercase;
+    color:var(--red); margin-bottom:18px;
+  }
+  h2.title{
+    font-size:clamp(1.6rem,4vw,2.6rem); font-weight:900; letter-spacing:-.02em;
+    line-height:1.05; margin-bottom:10px; text-transform:uppercase;
+  }
+  .lead{ color:var(--grey); max-width:60ch; font-size:1.02rem; }
+  .mono{ font-family:var(--mono); }
+
+  /* ── HERO ─────────────────────────────────── */
+  .hero{
+    min-height:78vh; display:flex; flex-direction:column; justify-content:center;
+    padding:120px 0 90px; position:relative; overflow:hidden;
+  }
+  .hero .kicker{ font-size:.8rem; letter-spacing:.4em; text-transform:uppercase; color:var(--yellow); font-weight:700; }
+  .hero h1{
+    font-size:clamp(3.4rem,15vw,11rem); font-weight:900; letter-spacing:-.04em;
+    line-height:.86; margin:14px 0 6px; text-transform:uppercase;
+  }
+  .hero h1 .dot{ color:var(--red); }
+  .hero .sub{ color:var(--grey); font-size:clamp(1rem,2.4vw,1.3rem); letter-spacing:.12em; text-transform:uppercase; }
+  .hero .tagrow{ margin-top:34px; display:flex; flex-wrap:wrap; gap:10px; }
+  .pill{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.05em;
+    border:1px solid #ffffff2e; border-radius:999px; padding:8px 14px; color:var(--paper);
+  }
+  .hero-doodle{ position:absolute; right:-20px; top:50%; transform:translateY(-50%); width:min(40vw,380px); opacity:.9; pointer-events:none; }
+
+  /* ── Palette ─────────────────────────────── */
+  .swatches{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:30px; }
+  .sw{ border-radius:14px; overflow:hidden; border:1px solid #ffffff14; }
+  .sw .chip{ height:120px; display:flex; align-items:flex-end; padding:12px; }
+  .sw .meta{ padding:12px 14px; background:var(--charcoal); }
+  .sw .name{ font-weight:800; font-size:.95rem; }
+  .sw .hex{ font-family:var(--mono); font-size:.78rem; color:var(--grey); margin-top:2px; }
+  .sw .role{ font-size:.74rem; color:var(--grey); margin-top:8px; line-height:1.4; }
+
+  /* ── Type ────────────────────────────────── */
+  .type-row{ border-top:1px solid #ffffff14; padding:22px 0; display:grid; grid-template-columns:160px 1fr; gap:24px; align-items:baseline; }
+  .type-row:first-child{ border-top:0; }
+  .type-label{ font-family:var(--mono); font-size:.74rem; color:var(--grey); }
+  .t-display{ font-size:clamp(2.4rem,7vw,4.6rem); font-weight:900; letter-spacing:-.03em; line-height:.95; text-transform:uppercase; }
+  .t-h{ font-size:clamp(1.5rem,4vw,2.2rem); font-weight:800; letter-spacing:-.01em; }
+  .t-body{ font-size:1.05rem; font-weight:400; color:#e9e7e1; max-width:54ch; }
+  .t-kick{ font-size:.8rem; font-weight:700; letter-spacing:.34em; text-transform:uppercase; color:var(--yellow); }
+  .t-mono{ font-family:var(--mono); font-size:1.05rem; }
+
+  /* ── Logo ────────────────────────────────── */
+  .logo-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:30px; }
+  .logo-card{ border:1px solid #ffffff14; border-radius:16px; padding:30px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-height:200px; text-align:center; }
+  .logo-card.light{ background:var(--paper); color:var(--ink); }
+  .logo-card .cap{ font-family:var(--mono); font-size:.72rem; color:var(--grey); }
+  .logo-card.light .cap{ color:#777; }
+
+  .lockup{ display:flex; align-items:center; gap:14px; }
+  .lockup .mark{ width:46px; height:46px; flex:none; }
+  .lockup .word{ font-weight:900; font-size:1.9rem; letter-spacing:-.03em; text-transform:uppercase; }
+  .lockup .word .dot{ color:var(--red); }
+
+  .lockup-stack{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .lockup-stack .mark{ width:56px; height:56px; }
+  .lockup-stack .word{ font-weight:900; font-size:2rem; letter-spacing:-.03em; text-transform:uppercase; line-height:1; }
+  .lockup-stack .tag{ font-size:.66rem; letter-spacing:.32em; text-transform:uppercase; color:var(--grey); font-weight:700; }
+
+  .favi{ width:64px; height:64px; border-radius:14px; background:var(--red); display:flex; align-items:center; justify-content:center; }
+  .favi svg{ width:40px; height:40px; }
+
+  /* ── Doodles ─────────────────────────────── */
+  .doodle-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:18px; margin-top:30px; }
+  .doodle{ border:1px solid #ffffff14; border-radius:16px; padding:26px; display:flex; flex-direction:column; align-items:center; gap:16px; background:var(--charcoal); }
+  .doodle svg{ width:120px; height:120px; }
+  .doodle .nm{ font-weight:800; font-size:.92rem; }
+  .doodle .ds{ font-size:.74rem; color:var(--grey); text-align:center; line-height:1.4; }
+  .stroke{ fill:none; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* self-draw demo */
+  .draw path, .draw circle, .draw line, .draw polyline{
+    stroke-dasharray:1200; stroke-dashoffset:1200;
+    animation:draw 2.6s ease forwards;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  /* ── UI elements ─────────────────────────── */
+  .ui-row{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:26px; }
+  .btn{ font-weight:800; font-size:.98rem; padding:.95em 1.9em; border-radius:999px; border:0; cursor:pointer; text-decoration:none; display:inline-block; letter-spacing:.01em; }
+  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 10px 30px rgba(255,59,29,.35); }
+  .btn-ghost{ background:transparent; color:var(--paper); border:1.5px solid #ffffff3a; }
+  .btn-yellow{ background:var(--yellow); color:var(--ink); }
+  .price-tag{ font-family:var(--mono); font-weight:700; background:var(--yellow); color:var(--ink); padding:6px 12px; border-radius:8px; font-size:.9rem; }
+  .chip{ border:1px solid #ffffff2e; border-radius:999px; padding:7px 14px; font-size:.78rem; font-family:var(--mono); }
+
+  /* ── Voice ───────────────────────────────── */
+  .voice-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:26px; }
+  .voice-card{ border:1px solid #ffffff14; border-radius:16px; padding:24px; }
+  .voice-card.yes{ border-color:#0E7C4A66; }
+  .voice-card.no{ border-color:#FF3B1D55; }
+  .voice-card h4{ font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; margin-bottom:14px; }
+  .voice-card.yes h4{ color:#34d27f; }
+  .voice-card.no h4{ color:var(--red); }
+  .voice-card ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .voice-card li{ font-size:.95rem; color:#e4e2dc; padding-left:22px; position:relative; }
+  .voice-card.yes li::before{ content:"✓"; position:absolute; left:0; color:#34d27f; font-weight:800; }
+  .voice-card.no li::before{ content:"✕"; position:absolute; left:0; color:var(--red); font-weight:800; }
+  .quote{ font-size:clamp(1.3rem,3.4vw,2rem); font-weight:800; letter-spacing:-.01em; line-height:1.25; margin-top:26px; }
+  .quote .hl{ color:var(--red); }
+
+  footer{ padding:50px 0 70px; color:var(--grey); font-family:var(--mono); font-size:.78rem; }
+
+  @media (max-width:640px){
+    .type-row{ grid-template-columns:1fr; gap:8px; }
+    .voice-grid{ grid-template-columns:1fr; }
+    .hero-doodle{ opacity:.18; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Brand Kit · v1</div>
+    <h1>MURGRILL<span class="dot">.</span></h1>
+    <div class="sub">Handgemachte Burger · Graz · seit 2019</div>
+    <div class="tagrow">
+      <span class="pill">CD: POP GRILL</span>
+      <span class="pill">DOODLES: SINGLE-LINE</span>
+      <span class="pill">TYPO: INTER + SPACE MONO</span>
+      <span class="pill">HEIMAT: STEIERMARK</span>
+    </div>
+  </div>
+  <!-- dezenter Uhrturm-Doodle im Hintergrund -->
+  <svg class="hero-doodle draw" viewBox="0 0 120 200" aria-hidden="true">
+    <g class="stroke" stroke="#FF3B1D" stroke-width="2">
+      <polyline points="40,200 40,70 80,70 80,200"/>
+      <polyline points="30,70 60,40 90,70"/>
+      <line x1="60" y1="40" x2="60" y2="22"/>
+      <path d="M60 22 L78 28 L60 34"/>
+      <circle cx="60" cy="120" r="17"/>
+      <line x1="60" y1="120" x2="60" y2="108"/>
+      <line x1="60" y1="120" x2="70" y2="124"/>
+    </g>
+  </svg>
+</header>
+
+<!-- ════════ DIRECTION ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Creative Direction</div>
+    <h2 class="title">Laut serviert,<br>fein gezeichnet.</h2>
+    <p class="lead">MURGRILL ist Street-Food mit Grazer Stolz. Die Basis ist <strong style="color:#fff">Pop Grill</strong> — hoher Kontrast, fette Typo, ein lautes Glut-Rot und Senf-Gelb. Der Twist, der's teuer macht: <strong style="color:#fff">feine Single-Line Doodles</strong> aus Graz (Panther, Mur, Uhrturm, Burger), die sich beim Scrollen selbst zeichnen. Bold trifft elegant. Kein Fast-Food-Clipart, sondern eine Marke mit Handschrift.</p>
+  </div>
+</section>
+
+<!-- ════════ PALETTE ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 — Farbpalette</div>
+    <h2 class="title">Glut & Senf auf Tiefschwarz</h2>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0F0F0F;border-bottom:1px solid #222"></div><div class="meta"><div class="name">Tiefschwarz</div><div class="hex">#0F0F0F</div><div class="role">Haupt-Hintergrund. Trägt das Video & die Doodles.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FAFAF7"></div><div class="meta"><div class="name">Papierweiß</div><div class="hex">#FAFAF7</div><div class="role">Text auf Dunkel & helle Sektionen (Menü, Footer).</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FF3B1D"></div><div class="meta"><div class="name">Glut-Rot</div><div class="hex">#FF3B1D</div><div class="role">Primärakzent. CTAs, Logo-Punkt, Highlights. Sparsam = laut.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFC400"></div><div class="meta"><div class="name">Senf-Gelb</div><div class="hex">#FFC400</div><div class="role">Sekundärakzent. Preis-Tags, Kicker, Sticker.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0E7C4A"></div><div class="meta"><div class="name">Steirisch-Grün</div><div class="hex">#0E7C4A</div><div class="role">Regionaler Akzent. Panther-Doodle, „regional"-Badges.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8A8A85"></div><div class="meta"><div class="name">Beton-Grau</div><div class="hex">#8A8A85</div><div class="role">Sekundärtext, Captions, Linien.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TYPO ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 — Typografie</div>
+    <h2 class="title">Inter, fett gegrillt</h2>
+    <p class="lead" style="margin-bottom:20px">Inter als Arbeitspferd in allen Gewichten. <span class="mono" style="color:#fff">Space Mono</span> als Würze für Preise, Tags und Labels — gibt den High-End-Twist.</p>
+    <div class="type-row"><div class="type-label">Display · Inter 900<br>tracking -3%</div><div class="t-display">Saftig. Punkt.</div></div>
+    <div class="type-row"><div class="type-label">Headline · Inter 800</div><div class="t-h">Steirisches Rind vom Bauern ums Eck</div></div>
+    <div class="type-row"><div class="type-label">Body · Inter 400</div><div class="t-body">Brioche täglich frisch gebacken, Sauce nach Hausrezept, gegrillt bis die Glut steht. Kein Schnickschnack — nur richtig guter Burger.</div></div>
+    <div class="type-row"><div class="type-label">Kicker · Inter 700<br>uppercase · +34%</div><div class="t-kick">Am Fuße des Schlossbergs</div></div>
+    <div class="type-row"><div class="type-label">Mono · Space Mono</div><div class="t-mono">CLASSIC € 9,90 · DOUBLE € 13,50</div></div>
+  </div>
+</section>
+
+<!-- ════════ LOGO ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 — Logo & Lockups</div>
+    <h2 class="title">Wortmarke + Uhrturm-Mark</h2>
+    <p class="lead">Schriftzug in Inter 900 mit rotem Punkt. Das Mini-Mark ist der <strong style="color:#fff">Uhrturm als Single-Line-Icon</strong> — sofort als Graz lesbar, klein einsetzbar. Panther als alternatives Badge.</p>
+    <div class="logo-grid">
+
+      <div class="logo-card">
+        <div class="lockup">
+          <svg class="mark stroke" viewBox="0 0 48 48" stroke="#FAFAF7" stroke-width="2.4">
+            <polyline points="15,44 15,17 33,17 33,44"/>
+            <polyline points="11,17 24,7 37,17"/>
+            <line x1="24" y1="7" x2="24" y2="2"/>
+            <circle cx="24" cy="29" r="7"/>
+            <line x1="24" y1="29" x2="24" y2="24"/><line x1="24" y1="29" x2="28" y2="31"/>
+          </svg>
+          <span class="word">MURGRILL<span class="dot">.</span></span>
+        </div>
+        <div class="cap">Primär · horizontal (dunkel)</div>
+      </div>
+
+      <div class="logo-card light">
+        <div class="lockup">
+          <svg class="mark stroke" viewBox="0 0 48 48" stroke="#0F0F0F" stroke-width="2.4">
+            <polyline points="15,44 15,17 33,17 33,44"/>
+            <polyline points="11,17 24,7 37,17"/>
+            <line x1="24" y1="7" x2="24" y2="2"/>
+            <circle cx="24" cy="29" r="7"/>
+            <line x1="24" y1="29" x2="24" y2="24"/><line x1="24" y1="29" x2="28" y2="31"/>
+          </svg>
+          <span class="word" style="color:#0F0F0F">MURGRILL<span class="dot">.</span></span>
+        </div>
+        <div class="cap">Invers · auf hell</div>
+      </div>
+
+      <div class="logo-card">
+        <div class="lockup-stack">
+          <svg class="mark stroke" viewBox="0 0 56 56" stroke="#FFC400" stroke-width="2.6">
+            <polyline points="18,52 18,20 38,20 38,52"/>
+            <polyline points="13,20 28,8 43,20"/>
+            <line x1="28" y1="8" x2="28" y2="3"/>
+            <circle cx="28" cy="34" r="8"/>
+            <line x1="28" y1="34" x2="28" y2="28"/><line x1="28" y1="34" x2="33" y2="36"/>
+          </svg>
+          <span class="word">MURGRILL</span>
+          <span class="tag">Graz · seit 2019</span>
+        </div>
+        <div class="cap">Gestapelt · für Social / Stempel</div>
+      </div>
+
+      <div class="logo-card">
+        <div class="favi">
+          <svg class="stroke" viewBox="0 0 48 48" stroke="#fff" stroke-width="2.8">
+            <polyline points="15,42 15,18 33,18 33,42"/>
+            <polyline points="12,18 24,9 36,18"/>
+            <circle cx="24" cy="29" r="6"/>
+          </svg>
+        </div>
+        <div class="cap">Favicon / App-Icon</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ DOODLES ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 — Graz-Doodles (Single-Line)</div>
+    <h2 class="title">Die selbstzeichnende Crew</h2>
+    <p class="lead">Vier Motive, ein Strich-Stil. Auf der Website zeichnen sie sich beim Scrollen per Stroke-Animation selbst — hier siehst du das Prinzip beim Laden.</p>
+    <div class="doodle-grid">
+
+      <div class="doodle">
+        <svg class="draw" viewBox="0 0 120 120" aria-hidden="true">
+          <g class="stroke" stroke="#0E7C4A" stroke-width="2.6">
+            <path d="M34 44 L40 16 L54 40"/>
+            <path d="M86 44 L80 16 L66 40"/>
+            <path d="M34 44 C26 62 32 86 60 100 C88 86 94 62 86 44"/>
+            <path d="M41 38 L42 26 L48 38"/>
+            <path d="M79 38 L78 26 L72 38"/>
+            <path d="M40 58 L54 54 L51 62 Z"/>
+            <path d="M80 58 L66 54 L69 62 Z"/>
+            <path d="M54 70 L66 70 L60 78 Z"/>
+            <path d="M60 78 L60 86"/>
+            <path d="M60 86 C53 90 49 86 46 82"/>
+            <path d="M60 86 C67 90 71 86 74 82"/>
+            <path d="M44 74 L26 70"/><path d="M44 78 L27 80"/>
+            <path d="M76 74 L94 70"/><path d="M76 78 L93 80"/>
+          </g>
+        </svg>
+        <div class="nm">Steirischer Panther</div>
+        <div class="ds">Regional-Stolz · Steirisch-Grün</div>
+      </div>
+
+      <div class="doodle">
+        <svg class="draw" viewBox="0 0 120 120" aria-hidden="true">
+          <g class="stroke" stroke="#FFC400" stroke-width="2.8">
+            <path d="M6 46 C24 30 36 62 54 46 C72 30 84 62 102 46 C108 41 112 41 116 46"/>
+            <path d="M6 66 C24 50 36 82 54 66 C72 50 84 82 102 66 C108 61 112 61 116 66"/>
+            <path d="M6 86 C24 70 36 102 54 86 C72 70 84 102 102 86 C108 81 112 81 116 86"/>
+          </g>
+        </svg>
+        <div class="nm">Mur</div>
+        <div class="ds">Der Fluss · Wellen-Linien</div>
+      </div>
+
+      <div class="doodle">
+        <svg class="draw" viewBox="0 0 120 120" aria-hidden="true">
+          <g class="stroke" stroke="#FAFAF7" stroke-width="2.6">
+            <polyline points="44,104 44,40 76,40 76,104"/>
+            <polyline points="36,40 60,18 84,40"/>
+            <line x1="60" y1="18" x2="60" y2="6"/>
+            <path d="M60 6 L78 12 L60 18"/>
+            <circle cx="60" cy="64" r="14"/>
+            <line x1="60" y1="64" x2="60" y2="52"/>
+            <line x1="60" y1="64" x2="69" y2="68"/>
+            <line x1="40" y1="104" x2="80" y2="104"/>
+          </g>
+        </svg>
+        <div class="nm">Uhrturm</div>
+        <div class="ds">Das Wahrzeichen · Logo-Mark</div>
+      </div>
+
+      <div class="doodle">
+        <svg class="draw" viewBox="0 0 120 120" aria-hidden="true">
+          <g class="stroke" stroke="#FF3B1D" stroke-width="2.8">
+            <path d="M22 44 C22 26 98 26 98 44 C98 50 22 50 22 44 Z"/>
+            <path d="M22 58 C40 50 80 50 98 58 C92 64 28 64 22 58 Z"/>
+            <path d="M22 72 C22 64 98 64 98 72 C98 84 86 88 60 88 C34 88 22 84 22 72 Z"/>
+            <circle cx="40" cy="38" r="1.4" fill="#FF3B1D"/>
+            <circle cx="56" cy="36" r="1.4" fill="#FF3B1D"/>
+            <circle cx="72" cy="38" r="1.4" fill="#FF3B1D"/>
+          </g>
+        </svg>
+        <div class="nm">Burger</div>
+        <div class="ds">Der Held · Glut-Rot</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ UI ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 — UI-Bausteine</div>
+    <h2 class="title">Buttons, Tags & Chips</h2>
+    <div class="ui-row">
+      <a class="btn btn-primary" href="#">Jetzt Tisch sichern</a>
+      <a class="btn btn-yellow" href="#">Menü ansehen</a>
+      <a class="btn btn-ghost" href="#">Mehr erfahren</a>
+      <span class="price-tag">€ 9,90</span>
+      <span class="chip">100% STEIRISCH</span>
+      <span class="chip">VEGGIE</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ VOICE ════════ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">06 — Tonalität</div>
+    <h2 class="title">Wie MURGRILL spricht</h2>
+    <div class="voice-grid">
+      <div class="voice-card yes">
+        <h4>So ja</h4>
+        <ul>
+          <li>Kurz, direkt, selbstbewusst — Du-Ansprache</li>
+          <li>Grazer Stolz, aber nicht kitschig</li>
+          <li>Konkret übers Produkt: Rind, Brioche, Glut</li>
+          <li>Augenzwinkern erlaubt</li>
+        </ul>
+      </div>
+      <div class="voice-card no">
+        <h4>So nicht</h4>
+        <ul>
+          <li>Lange, brave Schachtelsätze</li>
+          <li>Generisches Fast-Food-Marketing</li>
+          <li>Übertriebene Superlative ohne Substanz</li>
+          <li>Anglizismen-Salat</li>
+        </ul>
+      </div>
+    </div>
+    <p class="quote">„Irgendwann schmeckt jeder Burger gleich.<br><span class="hl">Bei uns nicht.</span>"</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="./index.html" style="color:var(--red);font-weight:700;text-decoration:none">← Zur MURGRILL Website</a>
+    <div style="margin-top:10px">MURGRILL Brand Kit v1 · fiktive Marke für Testprojekt · Inter + Space Mono · #0F0F0F / #FAFAF7 / #FF3B1D / #FFC400 / #0E7C4A</div>
+  </div>
+</footer>
+
+</body>
+</html>
