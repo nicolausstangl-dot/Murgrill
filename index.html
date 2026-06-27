@@ -138,22 +138,6 @@ section.paper{ background:var(--paper); color:var(--ink); }
 .stat .l{ margin-top:8px; font-size:.86rem; color:var(--grey); text-transform:uppercase; letter-spacing:.12em; }
 .regional-head{ display:grid; grid-template-columns:1fr auto; gap:30px; align-items:start; }
 .regional-head svg{ width:130px; height:130px; flex:none; }
-/* Lieferantengalerie */
-.suppliers{ margin-top:64px; }
-.sup-head{ font-size:.74rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--grey); margin-bottom:24px; }
-.sup-head b{ color:var(--paper); font-weight:700; }
-.sup-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.supplier{ display:flex; align-items:center; gap:14px; border:1px solid #ffffff16; border-radius:16px;
-  padding:16px 18px; background:var(--ink); transition:border-color .2s ease, transform .2s ease; }
-.supplier:hover{ border-color:#ffffff33; transform:translateY(-3px); }
-.sup-mono{ width:46px; height:46px; flex:none; border-radius:12px; display:flex; align-items:center;
-  justify-content:center; font-weight:900; font-size:1rem; letter-spacing:-.03em; }
-.sup-mono.r{ background:var(--red); color:#fff; }
-.sup-mono.y{ background:var(--yellow); color:var(--ink); }
-.sup-mono.g{ background:var(--green); color:#fff; }
-.sup-txt .nm{ font-weight:800; font-size:.98rem; line-height:1.15; }
-.sup-txt .pd{ font-size:.82rem; color:var(--grey); margin-top:2px; }
-.sup-txt .rg{ font-family:var(--mono); font-size:.7rem; color:var(--red); margin-top:4px; letter-spacing:.03em; }
 
 /* Menu (paper) */
 .menu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px 70px; }
@@ -474,18 +458,6 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
       <div class="stat reveal"><div class="n r">12</div><div class="l">Produzent:innen</div></div>
       <div class="stat reveal"><div class="n">0</div><div class="l">Fertigprodukte</div></div>
     </div>
-
-    <div class="suppliers reveal">
-      <div class="sup-head">Unsere <b>Produzent:innen</b> — alle aus der Region</div>
-      <div class="sup-grid">
-        <div class="supplier"><div class="sup-mono r">MH</div><div class="sup-txt"><div class="nm">Murbodner Hof Steirer</div><div class="pd">Murbodner Beef</div><div class="rg">Murtal</div></div></div>
-        <div class="supplier"><div class="sup-mono y">BK</div><div class="sup-txt"><div class="nm">Bäckerei Kornblum</div><div class="pd">Brioche &amp; Brot</div><div class="rg">Graz</div></div></div>
-        <div class="supplier"><div class="sup-mono g">SO</div><div class="sup-txt"><div class="nm">Gärtnerei Sonnhof</div><div class="pd">Gemüse &amp; Salat</div><div class="rg">Vulkanland</div></div></div>
-        <div class="supplier"><div class="sup-mono r">AB</div><div class="sup-txt"><div class="nm">Käserei Almblick</div><div class="pd">Cheddar &amp; Käse</div><div class="rg">Almenland</div></div></div>
-        <div class="supplier"><div class="sup-mono y">EW</div><div class="sup-txt"><div class="nm">Erdäpfelhof Wagner</div><div class="pd">Kartoffeln für Pommes</div><div class="rg">Südsteiermark</div></div></div>
-        <div class="supplier"><div class="sup-mono g">MQ</div><div class="sup-txt"><div class="nm">Murquell Brauerei</div><div class="pd">Craft Beer &amp; Limo</div><div class="rg">Graz</div></div></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -501,11 +473,11 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
 
       <div class="menu-col reveal">
         <h3>Signature Burger <span>vom Grill</span></h3>
-        <div class="menu-item"><div class="nm">Der Schlossberg<small>Murbodner Beef, gereifter Cheddar, Salat, Tomate, Burgersauce</small></div><div class="pr">€ 9,90</div></div>
+        <div class="menu-item"><div class="nm">Der Schlossberg<small>Beef Patty, gereifter Cheddar, Salat, Tomate, Burgersauce</small></div><div class="pr">€ 9,90</div></div>
         <div class="menu-item"><div class="nm">Doppelter Mur<small>Doppelpatty, doppelt Cheddar, Glut-Sauce, Röstzwiebel</small></div><div class="pr">€ 13,50</div></div>
         <div class="menu-item"><div class="nm">Uhrturm BBQ<small>Pulled Beef, Hickory-BBQ, Krautsalat, Jalapeño</small></div><div class="pr">€ 12,40</div></div>
         <div class="menu-item"><div class="nm">Sackstraßen-Smash<small>2 Smash-Patties, American Cheese, Pickles, Zwiebel</small></div><div class="pr">€ 11,90</div></div>
-        <div class="menu-item"><div class="nm">Blauer Mittwoch<small>Murbodner Beef, Blauschimmelkäse, karamell. Zwiebel, Rucola</small></div><div class="pr">€ 12,80</div></div>
+        <div class="menu-item"><div class="nm">Blauer Mittwoch<small>Beef Patty, Blauschimmelkäse, karamell. Zwiebel, Rucola</small></div><div class="pr">€ 12,80</div></div>
 
         <h3>Veggie &amp; Vegan <span class="mono">grün</span></h3>
         <div class="menu-item"><div class="nm">Grüner Panther <span class="vt">VEG</span><small>Gemüse-Patty, Avocado, Walnuss, Kräuter-Mayo</small></div><div class="pr">€ 11,20</div></div>
@@ -671,7 +643,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
 
 <!-- ════════ SCRIPT ════════ -->
 <script>
-const CONFIG = { FRAME_COUNT:121, FRAME_PATH:'./', FRAME_PREFIX:'frame', FRAME_DIGITS:3, FRAME_EXT:'.webp' };
+const CONFIG = { FRAME_COUNT:60, FRAME_PATH:'./', FRAME_PREFIX:'frame', FRAME_DIGITS:3, FRAME_EXT:'.webp' };
 
 (() => {
   'use strict';
