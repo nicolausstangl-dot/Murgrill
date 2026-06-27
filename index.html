@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>MURGRILL — Handgemachte Burger · Graz</title>
-<meta name="description" content="MURGRILL — handgemachte Burger aus Graz. Steirisches Rind, Brioche täglich frisch, am Fuße des Schlossbergs." />
+<meta name="description" content="MURGRILL — handgemachte Burger aus Graz. Murbodner Beef, Brioche täglich frisch, am Fuße des Schlossbergs." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -104,10 +104,10 @@ section.paper{ background:var(--paper); color:var(--ink); }
 .paper .sec-head p{ color:#5c5950; }
 
 /* Manifest */
-.manifest{ font-size:clamp(1.8rem,5vw,3.4rem); font-weight:800; letter-spacing:-.02em; line-height:1.18; max-width:18ch; }
+.manifest{ font-size:clamp(2rem,4.6vw,3.5rem); font-weight:800; letter-spacing:-.025em; line-height:1.08; }
 .manifest .hl{ color:var(--red); }
 .manifest .hy{ color:var(--yellow); }
-.manifest-row{ display:grid; grid-template-columns:1.4fr .6fr; gap:40px; align-items:center; }
+.manifest-row{ display:grid; grid-template-columns:minmax(0,1fr) 200px; gap:48px; align-items:center; }
 .manifest-row .doodle-wrap{ display:flex; justify-content:center; }
 .manifest-row .doodle-wrap svg{ width:100%; max-width:260px; height:auto; }
 
@@ -138,6 +138,22 @@ section.paper{ background:var(--paper); color:var(--ink); }
 .stat .l{ margin-top:8px; font-size:.86rem; color:var(--grey); text-transform:uppercase; letter-spacing:.12em; }
 .regional-head{ display:grid; grid-template-columns:1fr auto; gap:30px; align-items:start; }
 .regional-head svg{ width:130px; height:130px; flex:none; }
+/* Lieferantengalerie */
+.suppliers{ margin-top:64px; }
+.sup-head{ font-size:.74rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--grey); margin-bottom:24px; }
+.sup-head b{ color:var(--paper); font-weight:700; }
+.sup-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.supplier{ display:flex; align-items:center; gap:14px; border:1px solid #ffffff16; border-radius:16px;
+  padding:16px 18px; background:var(--ink); transition:border-color .2s ease, transform .2s ease; }
+.supplier:hover{ border-color:#ffffff33; transform:translateY(-3px); }
+.sup-mono{ width:46px; height:46px; flex:none; border-radius:12px; display:flex; align-items:center;
+  justify-content:center; font-weight:900; font-size:1rem; letter-spacing:-.03em; }
+.sup-mono.r{ background:var(--red); color:#fff; }
+.sup-mono.y{ background:var(--yellow); color:var(--ink); }
+.sup-mono.g{ background:var(--green); color:#fff; }
+.sup-txt .nm{ font-weight:800; font-size:.98rem; line-height:1.15; }
+.sup-txt .pd{ font-size:.82rem; color:var(--grey); margin-top:2px; }
+.sup-txt .rg{ font-family:var(--mono); font-size:.7rem; color:var(--red); margin-top:4px; letter-spacing:.03em; }
 
 /* Menu (paper) */
 .menu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px 70px; }
@@ -342,7 +358,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
 
     <div class="beat" id="beatC">
       <div class="line">Bei uns <span class="hl">nicht.</span></div>
-      <div class="small">Steirisches Rind vom Bauern ums Eck. Brioche täglich frisch. Sauce nach Hausrezept.</div>
+      <div class="small">Murbodner Beef vom Hof ums Eck. Brioche täglich frisch. Sauce nach Hausrezept.</div>
     </div>
 
     <div class="beat" id="beatD">
@@ -370,7 +386,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
   <div class="wrap manifest-row">
     <div class="reveal">
       <div class="eyebrow">Die Idee</div>
-      <p class="manifest" style="margin-top:18px">Kein Schnickschnack.<br>Nur <span class="hl">richtig gute</span> Burger — <span class="hy">handgemacht</span> in Graz.</p>
+      <p class="manifest" style="margin-top:18px">Kein Schnickschnack.<br>Nur <span class="hl">richtig gute Burger</span> —<br><span class="hy">handgemacht</span> in Graz.</p>
     </div>
     <div class="doodle-wrap">
       <svg class="scrub" viewBox="0 0 120 120" aria-hidden="true">
@@ -390,7 +406,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
     <div class="sec-head reveal">
       <div class="eyebrow">Unsere Helden</div>
       <h2>Drei, die du<br>probiert haben musst</h2>
-      <p>Jeden Tag frisch gegrillt. 100 % steirisches Rind — oder die Veggie-Variante, die selbst Fleischtiger überzeugt.</p>
+      <p>Jeden Tag frisch gegrillt. 100 % Murbodner Beef aus der Steiermark — oder die Veggie-Variante, die selbst Fleischtiger überzeugt.</p>
     </div>
     <div class="cards">
 
@@ -399,7 +415,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
         <div class="body">
           <div class="top"><h3>Der Schlossberg</h3><span class="price">€ 9,90</span></div>
           <p>Der Klassiker. Saftiges Patty, gereifter Cheddar, knackiger Salat, Tomate, Brioche. So muss Burger.</p>
-          <div class="tags"><span class="tag">100% RIND</span><span class="tag">CLASSIC</span></div>
+          <div class="tags"><span class="tag">MURBODNER BEEF</span><span class="tag">CLASSIC</span></div>
         </div>
       </div>
 
@@ -432,7 +448,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
       <div class="reveal">
         <div class="eyebrow">Herkunft</div>
         <h2 style="font-size:clamp(2rem,5.5vw,3.6rem);font-weight:900;letter-spacing:-.03em;line-height:1;text-transform:uppercase;margin:14px 0 16px">Steirisch durch<br>und durch</h2>
-        <p style="color:var(--grey);max-width:54ch;font-size:1.08rem">Bei uns kommt <strong style="color:#fff">alles</strong> aus der Steiermark — nicht nur das Rind, sondern auch Gemüse, Salat und das Brot. Ausschließlich von Produzent:innen, die wir beim Namen kennen. Die Gurken legen wir selbst ein, die Pommes schneiden wir von Hand, und jede Sauce ist hausgemacht. Kein Fertigprodukt verlässt unsere Küche.</p>
+        <p style="color:var(--grey);max-width:54ch;font-size:1.08rem">Bei uns kommt <strong style="color:#fff">alles</strong> aus der Steiermark — nicht nur das Murbodner Beef, sondern auch Gemüse, Salat und das Brot. Ausschließlich von Produzent:innen, die wir beim Namen kennen. Die Gurken legen wir selbst ein, die Pommes schneiden wir von Hand, und jede Sauce ist hausgemacht. Kein Fertigprodukt verlässt unsere Küche.</p>
       </div>
       <svg class="scrub" viewBox="0 0 120 120" aria-hidden="true">
         <g class="stroke" stroke="#0E7C4A" stroke-width="2.6">
@@ -458,6 +474,18 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
       <div class="stat reveal"><div class="n r">12</div><div class="l">Produzent:innen</div></div>
       <div class="stat reveal"><div class="n">0</div><div class="l">Fertigprodukte</div></div>
     </div>
+
+    <div class="suppliers reveal">
+      <div class="sup-head">Unsere <b>Produzent:innen</b> — alle aus der Region</div>
+      <div class="sup-grid">
+        <div class="supplier"><div class="sup-mono r">MH</div><div class="sup-txt"><div class="nm">Murbodner Hof Steirer</div><div class="pd">Murbodner Beef</div><div class="rg">Murtal</div></div></div>
+        <div class="supplier"><div class="sup-mono y">BK</div><div class="sup-txt"><div class="nm">Bäckerei Kornblum</div><div class="pd">Brioche &amp; Brot</div><div class="rg">Graz</div></div></div>
+        <div class="supplier"><div class="sup-mono g">SO</div><div class="sup-txt"><div class="nm">Gärtnerei Sonnhof</div><div class="pd">Gemüse &amp; Salat</div><div class="rg">Vulkanland</div></div></div>
+        <div class="supplier"><div class="sup-mono r">AB</div><div class="sup-txt"><div class="nm">Käserei Almblick</div><div class="pd">Cheddar &amp; Käse</div><div class="rg">Almenland</div></div></div>
+        <div class="supplier"><div class="sup-mono y">EW</div><div class="sup-txt"><div class="nm">Erdäpfelhof Wagner</div><div class="pd">Kartoffeln für Pommes</div><div class="rg">Südsteiermark</div></div></div>
+        <div class="supplier"><div class="sup-mono g">MQ</div><div class="sup-txt"><div class="nm">Murquell Brauerei</div><div class="pd">Craft Beer &amp; Limo</div><div class="rg">Graz</div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -473,11 +501,11 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
 
       <div class="menu-col reveal">
         <h3>Signature Burger <span>vom Grill</span></h3>
-        <div class="menu-item"><div class="nm">Der Schlossberg<small>Rind, gereifter Cheddar, Salat, Tomate, Burgersauce</small></div><div class="pr">€ 9,90</div></div>
+        <div class="menu-item"><div class="nm">Der Schlossberg<small>Murbodner Beef, gereifter Cheddar, Salat, Tomate, Burgersauce</small></div><div class="pr">€ 9,90</div></div>
         <div class="menu-item"><div class="nm">Doppelter Mur<small>Doppelpatty, doppelt Cheddar, Glut-Sauce, Röstzwiebel</small></div><div class="pr">€ 13,50</div></div>
         <div class="menu-item"><div class="nm">Uhrturm BBQ<small>Pulled Beef, Hickory-BBQ, Krautsalat, Jalapeño</small></div><div class="pr">€ 12,40</div></div>
         <div class="menu-item"><div class="nm">Sackstraßen-Smash<small>2 Smash-Patties, American Cheese, Pickles, Zwiebel</small></div><div class="pr">€ 11,90</div></div>
-        <div class="menu-item"><div class="nm">Blauer Mittwoch<small>Rind, Blauschimmelkäse, karamell. Zwiebel, Rucola</small></div><div class="pr">€ 12,80</div></div>
+        <div class="menu-item"><div class="nm">Blauer Mittwoch<small>Murbodner Beef, Blauschimmelkäse, karamell. Zwiebel, Rucola</small></div><div class="pr">€ 12,80</div></div>
 
         <h3>Veggie &amp; Vegan <span class="mono">grün</span></h3>
         <div class="menu-item"><div class="nm">Grüner Panther <span class="vt">VEG</span><small>Gemüse-Patty, Avocado, Walnuss, Kräuter-Mayo</small></div><div class="pr">€ 11,20</div></div>
@@ -609,7 +637,7 @@ footer{ background:var(--ink); padding:70px 0 40px; border-top:1px solid #ffffff
     <div class="foot-grid">
       <div>
         <div class="w">MURGRILL<span class="dot">.</span></div>
-        <p>Handgemachte Burger aus Graz. Steirisches Rind, Brioche täglich frisch, am Fuße des Schlossbergs.</p>
+        <p>Handgemachte Burger aus Graz. Murbodner Beef, Brioche täglich frisch, am Fuße des Schlossbergs.</p>
       </div>
       <div class="foot-col">
         <h4>Entdecken</h4>
@@ -682,12 +710,26 @@ const CONFIG = { FRAME_COUNT:121, FRAME_PATH:'./', FRAME_PREFIX:'frame', FRAME_D
   function prog(){const d=loaded+failed,p=Math.round(d/CONFIG.FRAME_COUNT*100);
     fillb.style.width=p+'%'; pct.textContent=p+'%'; if(d>=CONFIG.FRAME_COUNT) finish();}
   function finish(){
-    if(failed===CONFIG.FRAME_COUNT){pct.textContent='Frames fehlen – sequence/ prüfen';return;}
+    if(failed===CONFIG.FRAME_COUNT){pct.textContent='Frames fehlen – Pfad prüfen';return;}
     drawFrame(0,true);
     requestAnimationFrame(()=>{loader.classList.add('hidden');setTimeout(()=>loader.remove(),700);});
   }
-  for(let i=0;i<CONFIG.FRAME_COUNT;i++){const img=new Image();
-    img.onload=()=>{loaded++;prog();};img.onerror=()=>{failed++;prog();};img.src=frameSrc(i);images[i]=img;}
+  // Frames VORAB dekodieren (img.decode) statt erst beim ersten Zeichnen –
+  // das eliminiert das Ruckeln beim Scrubbing. Begrenzte Parallelität schont CPU/Netz.
+  let _next=0; const CONCURRENCY=10;
+  function pump(){
+    if(_next>=CONFIG.FRAME_COUNT) return;
+    const i=_next++;
+    const img=new Image();
+    img.decoding='async';
+    images[i]=img;
+    img.src=frameSrc(i);
+    (img.decode ? img.decode() : Promise.reject())
+      .then(()=>{ loaded++; })
+      .catch(()=>{ if(img.complete && img.naturalWidth){ loaded++; } else { failed++; } })
+      .finally(()=>{ prog(); pump(); });
+  }
+  for(let k=0;k<Math.min(CONCURRENCY,CONFIG.FRAME_COUNT);k++) pump();
 
   function drawFrame(idx,force){
     idx=clamp(idx,0,CONFIG.FRAME_COUNT-1); if(idx===current&&!force) return; current=idx;
