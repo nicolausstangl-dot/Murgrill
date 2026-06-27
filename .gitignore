@@ -1,0 +1,7 @@
+# Original-Uploads (unbenutzt, groß) – WebP-Versionen liegen in images/
+/*.png
+
+.DS_Store
+.github_token
+*.command
+token.txt
